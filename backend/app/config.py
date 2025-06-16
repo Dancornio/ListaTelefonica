@@ -10,4 +10,4 @@ class Config:
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     
     # Pega a URL de conexão do banco de dados a partir das variáveis de ambiente
-    SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL', 'postgresql://postgres:5RfSfPgu8MNmXK70@db.dbtvucmijlvmgvootqmb.supabase.co:5432/postgres')
+    SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL_TRANS', 'postgresql://postgres.dbtvucmijlvmgvootqmb:5RfSfPgu8MNmXK7@aws-0-sa-east-1.pooler.supabase.com:6543/postgres')
