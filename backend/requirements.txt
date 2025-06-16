@@ -5,4 +5,3 @@ Flask-Cors
 Flask-Marshmallow
 marshmallow-sqlalchemy
 python-dotenv
-gunicorn

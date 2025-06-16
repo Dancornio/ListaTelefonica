@@ -59,9 +59,11 @@ def update_contato(id_contato):
 
     # Lógica para atualizar telefones: remove os antigos e adiciona os novos
     if 'telefones' in data:
-        # O 'cascade="all, delete-orphan"' no modelo Contato trata da remoção do DB
-        contato.telefones.clear()
+        # Remove os telefones antigos associados a este contato
+        for telefone_existente in contato.telefones:
+            db.session.delete(telefone_existente)
         
+        # Adiciona os novos telefones
         telefones_data = data.get('telefones', [])
         for tel_data in telefones_data:
             novo_telefone = Telefone(numero=tel_data.get('numero'), tipo=tel_data.get('tipo'))
